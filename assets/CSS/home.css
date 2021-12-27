@@ -1,0 +1,211 @@
+body{
+    background-color: gray;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    border: 2px solid white;
+    background-image: url('/Images/Todo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+/* main div containing the functionality of Todo app */
+/* width = Half of the body width */
+#main{
+    width:50%;
+    /* background-color: black; */
+    background-image: linear-gradient(to bottom right, #070774, midnightblue);
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* Heading TODO App */
+
+#main h1{
+    text-align: center;
+    font-weight: 400;
+}
+
+/* description */
+
+.description{
+    font-size: 20px;
+    padding-left: 25px;
+}
+
+/* hovering effect on label */
+.description>label:hover{
+    color: #ff6e00
+}
+
+/* input text for description */
+/* This common styling is applied to all the input fields */
+.input_field{
+    width: 60%;
+    height: 40px;
+    margin-left: 20px;
+    border: none;
+}
+
+/* removing the border */
+
+.input_field:focus{
+    outline-width: 0;
+}
+
+/* Category and due date */
+
+#category>option:hover{
+    background-color: gray;
+}
+
+#category_and_due_date{
+    display: flex;
+}
+
+#category_and_due_date>div{
+    width: 50%;
+}
+
+
+/* Add and delete task button */
+/* This refers to the div containing all the buttons */
+.Add_and_delete{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Styling for individual buttons */
+
+.Add_and_delete button{
+    margin-left: 20px;
+    font-size: 24px;
+    display: inline;
+    margin-bottom: 20px;
+}
+
+/* Individual style to add task button */
+#add{
+    background-color: rgb(0, 252, 197);
+    border-radius: 8px;
+}
+
+/* hovering button to add task */
+#add:hover{
+    background-color: rgb(0, 172, 252);
+    color: white;
+    box-shadow: 0px 0px 12px 4px gray;
+    cursor: pointer;
+}
+
+/* Individual style to delete task button */
+
+#del{
+    background-color: rgb(252, 50, 0);
+    border-radius: 8px;
+}
+
+/* hovering button to delete task */
+
+#del:hover{
+    background-color: rgb(252, 0, 0);
+    color: white;
+    box-shadow: 0px 0px 12px 4px gray;
+    cursor: pointer;
+}
+
+/* This theme button is used to change 
+    the theme from light to dark and vice versa */
+
+#theme{
+    background-color: rgb(29, 252, 0);
+}
+
+/* hovering effect on theme button */
+
+#theme:hover{
+    background-color: rgb(0, 130, 252);
+    color: white;
+    box-shadow: 0px 0px 12px 4px gray;
+    cursor: pointer;
+}
+
+
+/* Tasks represents all the lists of todo tasks */
+#Tasks{
+    list-style: none;
+}
+
+
+/* This represents each lists of Todo tasks */
+
+.taskList{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+/* Each list is the child div container inside the  */
+/* This contains 3 divs inside - */
+/* Task name, Task description, Task category */
+#Each_List{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Styling for Task name, 
+Task description, Task category */
+
+#Each_List>div{
+    width: 25%;
+}
+
+/* Seprate styling for description */
+
+#describe{
+    width: 35% !important;
+    height: 100%;
+}
+
+/* Seprate styling for category */
+.category_List{
+    text-align: center;
+    height: 65%;
+    width: 15% !important;
+}
+
+/* From here background gradient has been setted
+    for all the five different category 
+    (different background for each category) */
+/* Category includes personal, work, school
+    cleaning, other */
+#personal{
+    background-image: linear-gradient(to bottom right, #ff00db, rgb(76, 0, 255));
+    color: white;
+    
+}
+
+#work{
+    background-image: linear-gradient(to bottom right, #0062ff, blue);
+    color: white;
+}
+
+
+#school{
+    background-image: linear-gradient(to bottom right, #004aff, rgb(0, 174, 255));
+    color: white;
+}
+
+#cleaning{
+    background-image: linear-gradient(to bottom right, #ffd000, rgb(255, 136, 0));
+    color: white;
+}
+
+#other{
+    background-image: linear-gradient(to bottom right, #51ff00, blue);
+    color: white;
+}
