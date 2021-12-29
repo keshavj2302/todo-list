@@ -21,3 +21,5 @@ db.on('open', function(err){
     }
     console.log("Successfully connected to the database:");
 });
+
+module.exports = db;

@@ -13,6 +13,9 @@ const homeController = require('../controller/home_controller');
 // Routing
 router.get('/', homeController.home);
 
+
+router.use('/user', require('./user'));
+
 // Middleware for creating sub router
 router.use('/add', require('./add_info'));
 
