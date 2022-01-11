@@ -1,0 +1,147 @@
+
+
+    <!-- home.css file inside assets -->
+    <link rel="stylesheet" href="/CSS/home.css">
+
+
+    <div id="main">
+        <!-- Title Todo List -->
+        <h1> <i class="fas fa-clipboard-list fa-1x"></i> <%= title %> </h1>
+        <hr>
+
+        <div class="personal_info">
+            <h2>Welcome, <%= user.name %> <%= user.age %></h2>
+
+            <p>Now, You can use the TodoList</p>
+            <p>Use <b>Add Task</b>  button, to create a new Task</p>
+            <p> <b>Delete</b> button, to delete the task</p>
+            <p> <b>Theme</b> button, to change the theme of the TodoList</p>
+
+
+            <form action="/user/destroy-session" method="post">
+                <input type="submit" value="Logout">
+            </form>
+        </div>
+
+        <hr>
+
+        
+
+        <p class="description"> <label for="name">Title</label> </p>
+
+
+        <!-- form for Todo list -->
+        <form action="/add/info" method="post">
+            <!-- input field for title  -->
+            <input type="text" name="name" class="input_field"  id="name" placeholder="Write your task here" required>
+            
+            <hr>
+
+            
+            <p class="description"> <label for="Describe">Description</label> </p>
+
+            <!-- input tag for description -->
+            <input type="text" name="description" class="input_field"  id="Describe" placeholder="Write a short description here" required>
+             
+            <hr>
+
+
+            <div id="category_and_due_date">
+                <div>
+
+                    <p class="description"><label for="category">Category</label></p>
+                    <!-- select and option tags are used to create dropdown -->
+                    <!-- category input fields -->
+                    <select name="category" class="input_field" id="category" placeholder="Choose a category" required>Choose a Category
+                        <option value="Choose a category">Choose a category</option>
+                        <option value="personal">Personal</option>
+                        <option value="work">Work</option>
+                        <option value="school">School</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+
+                    <p class="description"><label for="date">Due Date</label></p>
+                    
+                    <!-- input date tag -->
+                    <input type="date" name="date" class="input_field" id="due_date" required>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="Add_and_delete">
+                <!-- Add task button (submitting the 1st form) -->
+                <button type="submit" id="add"><i class="fas fa-tasks "></i> Add task</button>
+        </form>
+
+
+
+        <form action="/delete/info" method="post">
+
+            <!-- delete task button (submitting the 2nd form) -->
+
+                <button type="submit" id="del"><i class="fas fa-trash-alt "></i> Delete task</button>
+
+                <!-- This is theme button which toggles b/w dark and light mode -->
+
+                <button type="button" id="theme"> Light mode</button>
+            </div>
+                
+            <!-- This is used to print the task created in database -->
+            <ul id="Tasks">
+                <% for(let i = 0;i < task.length;i++){ %> 
+                
+                    <hr>
+
+                     <li>
+                         <div class="taskList">
+
+                            <!-- checkbox used to delete the mentioned task -->
+                             
+                             <input type="checkbox" name="id" value="<%=task[i]._id%>">
+
+                             <div id="Each_List">
+                                 <!-- Task name -->
+                                 <div>
+                                     <p> <%=  task[i].name %> </p>
+                                     <i class="fas fa-calendar-alt"></i> <i>  <%= task[i].date %> </i>
+                                 </div>
+
+                                 <!-- Task description -->
+
+                                 <div id="describe">
+                                    <p> <%= task[i].description %> </p>
+                                </div>
+
+                                <!-- Category for each task -->
+
+                                 <div class="category_List" id="<%= task[i].category %>">
+                                     <p> <%= task[i].category %> </p>
+                                 </div>
+                             </div>
+                         </div>
+                     </li>
+
+                     <hr>
+
+                <% } %>
+            </ul>
+        
+
+
+
+        </form>
+
+        
+
+
+        
+        
+    </div>
+
+    <script type="text/javascript" src="/JS/home.js">
+
+    </script>
