@@ -40,3 +40,5 @@ Then if not a signed in user then switch to signUp page after thus just signIn t
 After reaching the main TodoList Page you can see web page like this:-
 
 <img src="assets/Images/task.png" height="400">
+
+You can delete a task by checking the check box of the task that you want to delete, and then click delete Task.
