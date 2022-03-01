@@ -1,11 +1,12 @@
 // importing mongoose module
 const mongoose = require('mongoose');
+const env = require('./environment');
 
 const dotenv = require('dotenv');
 dotenv.config();
 
 // Connecting the mongoose module
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Todo_list');
+mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/${env.db}`);
 
 // returning db as the connection to database
 const db = mongoose.connection;

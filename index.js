@@ -2,7 +2,9 @@
 const express = require('express');
 // Defining port for server
 const port = process.env.PORT || 3800;
-
+const env = require('./config/environment');
+const path = require('path');
+const logger = require('morgan');
 // setting up database
 const db = require('./config/mongoose');
 
@@ -26,9 +28,11 @@ const app = express();
 // Import sassMiddleware
 const sassMiddleware = require('node-sass-middleware');
 
+app.use(logger(env.morgan.mode, env.morgan.options));
+
 app.use(sassMiddleware({
-    src:'./assets/SCSS',
-    dest: './assets/CSS',
+    src:path.join(__dirname, env.assets_path, '/SCSS'),
+    dest: path.join(__dirname, env.assets_path, '/CSS'),
     debug:true,
     outputStyle: 'extended',
     prefix: '/CSS'
@@ -37,7 +41,7 @@ app.use(sassMiddleware({
 
 app.use(session({
     name:'TodoList',
-    secret:'keshav',
+    secret:env.secret_key,
     saveUninitialized:false,
     resave:false,
     cookie:{
@@ -67,7 +71,7 @@ app.use(express.urlencoded());
 
 
 // Middleware for accessing the static file
-app.use(express.static('assets'));
+app.use(express.static(`.${env.assets_path}`));
 
 // Middleware for accessing index.js from route folder
 app.use('/', require('./route/index'));
