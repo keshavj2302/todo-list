@@ -1,0 +1,62 @@
+body {
+  background-color: gray;
+}
+
+body .main {
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: auto;
+}
+
+body .main h1 {
+  text-align: center;
+}
+
+body .main form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .main form div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body .main form div input {
+  margin-top: 10px;
+}
+
+body .main form > * {
+  margin-top: 20px;
+}
+
+body .main form > input {
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 550px) {
+  body .main {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  body .main {
+    width: 65%;
+  }
+}
+/*# sourceMappingURL=user_signIn.css.map */

@@ -1,0 +1,234 @@
+body {
+  background-color: gray;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 0;
+  border: 2px solid white;
+  background-image: url("/Images/Todo.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+
+/* main div containing the functionality of Todo app */
+/* width = Half of the body width */
+#main {
+  width: 50%;
+  /* background-color: black; */
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#070774), to(midnightblue));
+  background-image: linear-gradient(to bottom right, #070774, midnightblue);
+  margin: auto;
+  border-radius: 10px;
+}
+
+/* Heading TODO App */
+#main h1 {
+  text-align: center;
+  font-weight: 400;
+}
+
+/* description */
+.description {
+  font-size: 20px;
+  padding-left: 25px;
+}
+
+/* hovering effect on label */
+.description > label:hover {
+  color: #ff6e00;
+}
+
+/* input text for description */
+/* This common styling is applied to all the input fields */
+.input_field {
+  width: 60%;
+  height: 40px;
+  margin-left: 20px;
+  border: none;
+}
+
+/* removing the border */
+.input_field:focus {
+  outline-width: 0;
+}
+
+/* Category and due date */
+#category > option:hover {
+  background-color: gray;
+}
+
+#category_and_due_date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#category_and_due_date > div {
+  width: 50%;
+}
+
+.personal_info {
+  padding: 15px;
+}
+
+.personal_info input {
+  border-radius: 5px;
+  height: 30px;
+  width: 100px;
+  font-weight: 600;
+  color: white;
+  background-color: #195f70;
+}
+
+/* Add and delete task button */
+/* This refers to the div containing all the buttons */
+.Add_and_delete {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* Styling for individual buttons */
+.Add_and_delete button {
+  margin-left: 20px;
+  font-size: 24px;
+  display: inline;
+  margin-bottom: 20px;
+}
+
+/* Individual style to add task button */
+#add {
+  background-color: #00fcc5;
+  border-radius: 8px;
+}
+
+/* hovering button to add task */
+#add:hover {
+  background-color: #00acfc;
+  color: white;
+  -webkit-box-shadow: 0px 0px 12px 4px gray;
+          box-shadow: 0px 0px 12px 4px gray;
+  cursor: pointer;
+}
+
+/* Individual style to delete task button */
+#del {
+  background-color: #fc3200;
+  border-radius: 8px;
+}
+
+/* hovering button to delete task */
+#del:hover {
+  background-color: #fc0000;
+  color: white;
+  -webkit-box-shadow: 0px 0px 12px 4px gray;
+          box-shadow: 0px 0px 12px 4px gray;
+  cursor: pointer;
+}
+
+/* This theme button is used to change 
+    the theme from light to dark and vice versa */
+#theme {
+  background-color: #1dfc00;
+}
+
+/* hovering effect on theme button */
+#theme:hover {
+  background-color: #0082fc;
+  color: white;
+  -webkit-box-shadow: 0px 0px 12px 4px gray;
+          box-shadow: 0px 0px 12px 4px gray;
+  cursor: pointer;
+}
+
+/* Tasks represents all the lists of todo tasks */
+#Tasks {
+  list-style: none;
+}
+
+/* This represents each lists of Todo tasks */
+.taskList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+/* Each list is the child div container inside the  */
+/* This contains 3 divs inside - */
+/* Task name, Task description, Task category */
+#Each_List {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* Styling for Task name, 
+Task description, Task category */
+#Each_List > div {
+  width: 25%;
+}
+
+/* Seprate styling for description */
+#describe {
+  width: 35% !important;
+  height: 100%;
+}
+
+/* Seprate styling for category */
+.category_List {
+  text-align: center;
+  height: 65%;
+  width: 15% !important;
+}
+
+/* From here background gradient has been setted
+    for all the five different category 
+    (different background for each category) */
+/* Category includes personal, work, school
+    cleaning, other */
+#personal {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ff00db), to(#4c00ff));
+  background-image: linear-gradient(to bottom right, #ff00db, #4c00ff);
+  color: white;
+}
+
+#work {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#0062ff), to(blue));
+  background-image: linear-gradient(to bottom right, #0062ff, blue);
+  color: white;
+}
+
+#school {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#004aff), to(#00aeff));
+  background-image: linear-gradient(to bottom right, #004aff, #00aeff);
+  color: white;
+}
+
+#cleaning {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ffd000), to(#ff8800));
+  background-image: linear-gradient(to bottom right, #ffd000, #ff8800);
+  color: white;
+}
+
+#other {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#51ff00), to(blue));
+  background-image: linear-gradient(to bottom right, #51ff00, blue);
+  color: white;
+}
+/*# sourceMappingURL=home.css.map */
