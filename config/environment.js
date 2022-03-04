@@ -2,11 +2,9 @@
 
 const fs = require('fs');
 
-console.log('******');
 
 const rfs = require('rotating-file-stream');
 
-console.log('#######');
 
 const path = require('path');
 

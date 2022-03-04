@@ -4,9 +4,9 @@ const task = require('../models/tasks');
 
 // function to delete the task
 module.exports.delete = function(req, res){
-    
     // fetching the id
     var id = req.body.id;
+    console.log('########', id);
 
 
     // if there is atleast one task is choosen
@@ -14,11 +14,12 @@ module.exports.delete = function(req, res){
     // id of the choosen task and then delete it.
     if(id != undefined){
         for(let elem of id){
-            task.findByIdAndDelete(id, function(err){
+            task.findByIdAndDelete(elem, function(err){
                 if(err){
                     console.log("Error:", err);
                     return;
                 }
+                console.log('Item deleted successfully !!!!');
             });
         }
     }
