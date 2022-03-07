@@ -9,19 +9,35 @@
         <h1> <i class="fas fa-clipboard-list fa-1x"></i> <%= title %> </h1>
         <hr>
 
-        <div class="personal_info">
-            <h2>Welcome, <%= user.name %> <%= user.age %></h2>
+        <div class="users_info se_flex">
+            <div class="personal_info ">
+                <h2>Welcome, <%= user.name %> <%= user.age %></h2>
+    
+                <p>Now, You can use the TodoList</p>
+                <p>Use <b>Add Task</b>  button, to create a new Task</p>
+                <p> <b>Delete</b> button, to delete the task</p>
+                <p> <b>Theme</b> button, to change the theme of the TodoList</p>
+    
+    
+                <form action="/user/destroy-session" method="post">
+                    <input type="submit" value="Logout">
+                </form>
+            </div>
 
-            <p>Now, You can use the TodoList</p>
-            <p>Use <b>Add Task</b>  button, to create a new Task</p>
-            <p> <b>Delete</b> button, to delete the task</p>
-            <p> <b>Theme</b> button, to change the theme of the TodoList</p>
+            <div class="user_profile ">
+                <div class="img_box "><img src="<%= user.avatar %>" class="image" alt="<%= user.name %>'s profile Pic"></div>
 
-
-            <form action="/user/destroy-session" method="post">
-                <input type="submit" value="Logout">
-            </form>
+                <form action="/user/uploaded-avatar" class=" mt-2" enctype="multipart/form-data" method="post">
+                    <input type="file" name="avatar" class="" id="avatar"><br><br>
+                    <input type="hidden" name="user" value="<%= user._id %>">
+                    <!-- <input type="submit"   value="upload image"> -->
+                    <button class="button"><i class="fas fa-image "></i> upload image</button>
+                </form>
+                
+            </div>
         </div>
+
+        
 
         <hr>
 

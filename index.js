@@ -73,6 +73,8 @@ app.use(express.urlencoded());
 // Middleware for accessing the static file
 app.use(express.static(`.${env.assets_path}`));
 
+app.use('/uploads', express.static(__dirname+'/uploads'));
+
 // Middleware for accessing index.js from route folder
 app.use('/', require('./route/index'));
 

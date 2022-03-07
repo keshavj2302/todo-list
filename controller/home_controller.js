@@ -2,6 +2,40 @@
 // Importing the task schema
 const tasks = require('../models/tasks');
 const User = require('../models/user');
+const fs = require('fs');
+const path = require('path');
+
+
+module.exports.avatar = async function(req, res){
+
+    try {
+
+        let user = await User.findById(req.user._id);
+        console.log('#######');
+        
+        User.uploadedAvatar(req, res, function(err){
+            
+            if(req.file){
+                
+                if(user.avatar){
+                    console.log('#######');
+                    fs.unlinkSync(path.join(__dirname, '..', user.avatar));
+                }
+                user.avatar = User.avatarPath + '/' + req.file.filename;
+                user.save();
+                console.log('#########', user.avatar);
+            }
+        });
+
+        return res.redirect('back');
+
+    } catch (err) {
+        
+        console.log('Error inside avatar function of home_Controller : ', err);
+        return;
+    }
+}
+
 
 // This home function is going to
 //  render the home page on the browser
@@ -30,7 +64,10 @@ module.exports.home = function(req, res){
 
         // });
 
-        console.log(req.user);
+        // console.log(req.user);
+
+        // req.user.avatar = null;
+        // req.user.save();
 
         return res.render('home', {
             title: "TODO App",
