@@ -20,6 +20,10 @@ const task = new mongoose.Schema({
     date:{
         type:String,
         required:true
+    },
+    finished:{
+        type: Boolean,
+        default:false
     }
 },{
     timestamps:true

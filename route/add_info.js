@@ -11,5 +11,7 @@ const router = express.Router();
 // Routing
 router.post('/info', addController.add);
 
+router.get('/task-completed/:id', addController.complete);
+
 // Exporting router
 module.exports = router;

@@ -132,6 +132,10 @@
                                     <p> <%= task[i].description %> </p>
                                 </div>
 
+                                <div class="mark_as_done" id="">
+                                    <a href="/add/task-completed/<%= task[i]._id %>" class="cen">Mark as done</a>
+                                </div>
+
                                 <!-- Category for each task -->
 
                                  <div class="category_List" id="<%= task[i].category %>">

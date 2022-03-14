@@ -14,6 +14,27 @@
     cursor: pointer;
 }
 
+.cen{
+    text-align: center;
+}
+
+
+.mark_as_done{
+    height: 40px;
+    // border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #106faf;
+
+    a{color: white; text-decoration: none;height: 100%;width: 100%;padding-top: 14px;}
+
+}
+
+.mark_as_done:hover{
+    background-color: orangered;
+}
+
 .button:hover{background-image: linear-gradient(to bottom right, orange, rgba(224, 13, 13, 0.918));}
 
 
@@ -31,7 +52,7 @@ body{
 /* main div containing the functionality of Todo app */
 /* width = Half of the body width */
 #main{
-    width:50%;
+    width:60%;
     /* background-color: black; */
     background-image: linear-gradient(to bottom right, #070774, midnightblue);
     margin: auto;

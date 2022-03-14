@@ -19,3 +19,20 @@ module.exports.add = function(req, res){
     });
 };
 
+module.exports.complete = async function(req, res){
+
+    try {
+        let Task = await task.findById(req.params.id);
+        Task.finished = true;
+        Task.save();
+        console.log('True done');
+        return res.redirect('back');
+        
+    } catch (err) {
+        console.log('Error in addController inside complete : ', err);
+        return;
+    }
+    
+    
+}
+
